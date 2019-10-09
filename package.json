@@ -4,6 +4,7 @@
   "homepage": "http://1cb8c1.github.io/simple-page.git",
   "private": true,
   "dependencies": {
+    "node-sass": "^4.12.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-scripts": "3.2.0"

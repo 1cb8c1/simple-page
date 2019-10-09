@@ -3,16 +3,17 @@ import { NavigationContext } from "../Contexts/NavigationContext";
 import { GamePage } from "./GamePage";
 import { CompanysPage } from "./CompanysPage";
 import { Navbar } from "../Components/Navbar";
+import "../Styles/MainStyle.scss";
 
 export const MainPage = () => {
   const [whichPage, setWhichPage] = useContext(NavigationContext);
-  const choices = ["GamePage", "CompanyPage"];
+  const choices = ["Game", "Company"];
 
   return (
-    <>
+    <div className="MainPage">
       <Navbar choices={choices} onClick={setWhichPage} />
-      {whichPage === "GamePage" ? <GamePage /> : null}
-      {whichPage === "CompanyPage" ? <CompanysPage /> : null}
-    </>
+      {whichPage === "Game" ? <GamePage /> : null}
+      {whichPage === "Company" ? <CompanysPage /> : null}
+    </div>
   );
 };
