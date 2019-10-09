@@ -1,5 +1,7 @@
 import React from "react";
+import { Dummy } from "../texts/GamePage.json";
+import "../Styles/GameStyle.scss";
 
 export const GamePage = () => {
-  return <div>Game Page</div>;
+  return <div className="GamePage">{Dummy}</div>;
 };
