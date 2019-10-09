@@ -7,7 +7,7 @@
   overflow: hidden; //children will not render outside this div ?_?
   float: center;
   text-align: center; //formated as an inline element
-
+  transition: height 1s ease;
   button {
     display: inline-block;
     height: 100%;

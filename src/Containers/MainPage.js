@@ -11,7 +11,12 @@ export const MainPage = () => {
 
   return (
     <div className="MainPage">
-      <Navbar choices={choices} onClick={setWhichPage} />
+      <Navbar
+        smallHeight={40}
+        height={75}
+        choices={choices}
+        onClick={setWhichPage}
+      />
       {whichPage === "Game" ? <GamePage /> : null}
       {whichPage === "Company" ? <CompanysPage /> : null}
     </div>

@@ -1,3 +1,22 @@
 .GamePage {
-  font-size: 50px;
+  width: 100%;
+  height: 2000px;
+  background-image: linear-gradient(#100446, #374db1, rgb(82, 159, 231));
+}
+
+.Element {
+  height: 100px;
+  width: 100px;
+  background: red;
+  transform: translateZ(0px);
+  animation: animateZ 2s infinite;
+}
+
+@keyframes animateZ {
+  from {
+    transform: translateZ(-4px);
+  }
+  to {
+    transform: translateZ(4px);
+  }
 }
