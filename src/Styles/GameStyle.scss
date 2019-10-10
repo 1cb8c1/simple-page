@@ -1,22 +1,56 @@
 .GamePage {
   width: 100%;
-  height: 2000px;
   background-image: linear-gradient(#100446, #374db1, rgb(82, 159, 231));
 }
 
-.Element {
-  height: 100px;
-  width: 100px;
-  background: red;
-  transform: translateZ(0px);
-  animation: animateZ 2s infinite;
+.parallax {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 1px;
+  perspective: 10px;
 }
 
-@keyframes animateZ {
-  from {
-    transform: translateZ(-4px);
-  }
-  to {
-    transform: translateZ(4px);
-  }
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.parallax__layer--base {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.parallax__layer--background {
+  -webkit-transform: translateZ(-10px) scale(2.05) rotate(180deg)
+    translate3d(0, 0, 0);
+  transform: translateZ(-10px) scale(2.05) rotate(180deg) translate3d(0, 0, 0);
+  background: #100446;
+  background-image: url(https://images.unsplash.com/photo-1531306728370-e2ebd9d7bb99?ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  backface-visibility: hidden;
+}
+.parallax__layer--background2 {
+  -webkit-transform: translateZ(-9px) scale(1.95);
+  transform: translateZ(-9px) scale(1.95);
+  background-image: linear-gradient(#10044600, #100446b7, #0d2163ef);
+}
+
+/* Doesn't work without this!!! */
+.parallax__layer {
+  padding: 80vh 0; //Making scroll possible
+  color: wheat;
+}
+
+/* centre the content in the parallax layers */
+.title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
