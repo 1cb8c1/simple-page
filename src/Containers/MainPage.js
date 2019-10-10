@@ -6,8 +6,15 @@ import { Navbar } from "../Components/Navbar";
 import "../Styles/MainStyle.scss";
 
 export const MainPage = () => {
-  const [whichPage, setWhichPage] = useContext(NavigationContext);
+  console.log("MainPage was called");
+  const [nav, setNav] = useContext(NavigationContext);
   const choices = ["Game", "Company"];
+
+  const handleClick = choice => {
+    setNav((prevState, props) => {
+      return { ...prevState, menu: choice };
+    });
+  };
 
   return (
     <div className="MainPage">
@@ -15,10 +22,11 @@ export const MainPage = () => {
         smallHeight={40}
         height={75}
         choices={choices}
-        onClick={setWhichPage}
+        onClick={handleClick}
+        small={nav.smallNavbar}
       />
-      {whichPage === "Game" ? <GamePage /> : null}
-      {whichPage === "Company" ? <CompanysPage /> : null}
+      {nav.menu === "Game" ? <GamePage /> : null}
+      {nav.menu === "Company" ? <CompanysPage /> : null}
     </div>
   );
 };
