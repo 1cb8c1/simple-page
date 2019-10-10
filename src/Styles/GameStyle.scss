@@ -17,6 +17,16 @@
   left: 0;
   right: 0;
   bottom: 0;
+  height: 200vw; //Making scroll possible
+  //Aligning
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  * {
+    align: auto;
+  }
 }
 
 .parallax__layer--base {
@@ -40,17 +50,31 @@
   background-image: linear-gradient(#10044600, #100446b7, #0d2163ef);
 }
 
-/* Doesn't work without this!!! */
-.parallax__layer {
-  padding: 80vh 0; //Making scroll possible
-  color: wheat;
+.parallax__layer--layer1 {
+  -webkit-transform: translateZ(-2px) scale(1.2);
+  transform: translateZ(-2px) scale(1.2);
 }
 
-/* centre the content in the parallax layers */
-.title {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+/* Doesn't work without this!!! */
+
+.quote {
+  height: 30vh;
+  width: 50vw;
+  margin-top: 30vw;
+  font-size: 4vw;
+  color: white;
+  text-align: center;
+}
+
+.quoteFrame {
+  height: 30vw;
+  width: 50vw;
+  border: 1vw white solid;
+  box-shadow: 0px 0px 20px 0px white;
+  margin-top: 33vw;
+  color: #10044600;
+}
+
+h1 {
+  margin-top: 50%;
 }
